@@ -1,0 +1,50 @@
+pip install django
+pip install djangorestframework
+pip install mysqlclient  # For MySQL
+pip install python-decouple  # For managing .env files
+
+
+django-admin startproject your_project_name
+cd your_project_name
+
+python manage.py startapp DBProject
+
+
+
+
+
+//Add the App to Installed Apps: Open settings.py in your Django project and add the app name (main_app) to the INSTALLED_APPS list:
+
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    ...
+    'main_app',
+]
+
+
+//Install django-cors-headers: This allows Django to accept requests from React.
+
+pip install django-cors-headers
+
+//Add 'corsheaders' to INSTALLED_APPS and configure middleware in settings.py:
+
+INSTALLED_APPS += ['corsheaders']
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ...
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React development server
+]
+
+//Create the React App: Navigate to your project directory and create a React app using:
+
+
+npx create-react-app frontend
+//but first install node.js from https://nodejs.org/en
+

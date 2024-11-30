@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="role-restriction.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Store Management System</div>
+        <nav>
+            <!-- Remove irrelevant links for the admin -->
+            <a href="index.html" aria-label="Home">Home</a>
+        </nav>
+    </header>
+
+    <!-- Sidebar (only Admin-specific links) -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="admin.html" aria-label="Admin Dashboard">Admin Dashboard</a></li>
+            <li><a href="#" aria-label="Manage Cashiers">Manage Cashiers</a></li>
+            <li><a href="#" aria-label="View Customer History">View Customer History</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section id="admin-dashboard">
+            <h1>Admin Dashboard</h1>
+
+            <div class="dashboard-card">
+                <h2>Customer History</h2>
+                <p>View all customers who have ever visited the store.</p>
+                <button class="role-button admin" onclick="viewCustomers()">View Customers</button>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Current Cashiers</h2>
+                <p>View all the cashiers currently working in the store.</p>
+                <button class="role-button admin" onclick="viewCashiers()">View Cashiers</button>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Manage Cashiers</h2>
+                <p>Add or remove cashiers from the system.</p>
+                <button class="role-button admin" onclick="manageCashiers()">Manage Cashiers</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Store Management System. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Placeholder functions for buttons
+        function viewCustomers() {
+            alert("Redirecting to customer history...");
+            // Implement redirection logic
+        }
+
+        function viewCashiers() {
+            alert("Redirecting to current cashiers...");
+            // Implement redirection logic
+        }
+
+        function manageCashiers() {
+            alert("Redirecting to manage cashiers...");
+            // Implement redirection logic
+        }
+    </script>
+</body>
+</html>
