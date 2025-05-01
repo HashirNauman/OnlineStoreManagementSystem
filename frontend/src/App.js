@@ -4,10 +4,22 @@ import axios from "axios";
 import "./App.css";
 
 // Import dashboard components
-import AdminDashboard from "./components/AdminDashboard";
-import CashierDashboard from "./components/CashierDashboard";
-import CustomerDashboard from "./components/CustomerDashboard";
+import AdminDashboard from "./dashboards/AdminDashboard.tsx";
+import CashierDashboard from "./dashboards/CashierDashboard.tsx";
+import CustomerDashboard from "./dashboards/CustomerDashboard.tsx";
+// Import admin-specific components
+import ManageCashier from "./dashboards/Admin-Components/ManageCashier";
+import Feedback from "./dashboards/Admin-Components/Feedback";
+import CustomerHistory from "./dashboards/Admin-Components/CustomerHistory";
+import Inventory from "./dashboards/Admin-Components/Inventory";
+import Notify_User from "./dashboards/Admin-Components/Notify_User.tsx";
 
+import Explore from "./dashboards/Customer-Components/Explore.tsx";
+import MyOrdersAndWishlist from "./dashboards/Customer-Components/MyOrdersAndWishlist.tsx";
+import Notifications from "./dashboards/Customer-Components/Notifications.tsx";
+import Send_Feedback from "./dashboards/Customer-Components/Send_Feedback.tsx";
+
+import { UserRoundPlus } from "lucide-react";
 function App() {
     const [view, setView] = useState("login");
     const [selectedRole, setSelectedRole] = useState(null);
@@ -169,6 +181,19 @@ function App() {
 
             {/* Role-based routes */}
             <Routes>
+                
+                <Route path="/admin/manage-cashier" element={<ManageCashier />} />
+                <Route path="/admin/feedback" element={<Feedback />} />
+                <Route path="/admin/customer-history" element={<CustomerHistory />} />
+                <Route path="/admin/inventory" element={<Inventory />} />                
+                <Route path="/customer/explore" element={<Explore />} />
+                <Route path="/customer/orders-wishlist" element={<MyOrdersAndWishlist />} />
+                <Route path="/customer/send-feedback" element={<Send_Feedback />} />
+                <Route path="/customer/notifications" element={<Notifications />} />
+
+                <Route path="/cashier/inventory" element={<Inventory />} />
+                <Route path="/cashier/notify-user" element={<Notifications />} />
+
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/cashier" element={<CashierDashboard />} />
                 <Route path="/customer" element={<CustomerDashboard />} />

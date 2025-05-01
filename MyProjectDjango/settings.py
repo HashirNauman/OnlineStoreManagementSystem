@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-l65te5c^roqw(#_#kwr5$2_w4#3#1eb*g=wbh%b06ty*05c#hx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['47c9-119-155-221-90.ngrok-free.app',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -54,7 +55,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React development server
+    "http://localhost:3000",
+    "https://6def-119-155-208-162.ngrok-free.app"
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
@@ -172,7 +174,8 @@ SESSION_COOKIE_AGE = 3600  # Session expiry time in seconds (e.g., 1 hour)
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 # In settings.py
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000',
-                        'http://localhost:3000'
+                        'http://localhost:3000',
+                        'https://6def-119-155-208-162.ngrok-free.app/'
                         ]  # Add your trusted origins here
 
 
